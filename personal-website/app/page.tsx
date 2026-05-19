@@ -1,9 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
+<Link
+  href="/marvel-tracker"
+  className="inline-flex items-center gap-3 rounded-full bg-red-600 hover:bg-red-700 transition-colors px-6 py-3 text-white font-medium text-sm"
+>
+  <span>🕷️</span>
+  <span>Marvel Watch Tracker</span>
+</Link>
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        
         <Image
           className="dark:invert"
           src="/next.svg"
