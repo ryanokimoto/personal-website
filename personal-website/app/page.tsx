@@ -1,74 +1,194 @@
-import Image from "next/image";
 import Link from "next/link";
 
-<Link
-  href="/marvel-tracker"
-  className="inline-flex items-center gap-3 rounded-full bg-red-600 hover:bg-red-700 transition-colors px-6 py-3 text-white font-medium text-sm"
->
-  <span>🕷️</span>
-  <span>Marvel Watch Tracker</span>
-</Link>
+export const metadata = {
+  title: "Ryan Okimoto",
+  description: "Personal website of Ryan Okimoto",
+};
+
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="root">
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .root {
+          min-height: 100vh;
+          background: #faf9f7;
+          display: flex;
+          flex-direction: column;
+          font-family: 'DM Sans', sans-serif;
+        }
+
+        nav {
+          padding: 32px 48px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .nav-name {
+          font-family: 'DM Sans', sans-serif;
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #1a1a1a;
+          text-decoration: none;
+        }
+
+        .nav-links {
+          display: flex;
+          gap: 32px;
+          list-style: none;
+        }
+
+        .nav-links a {
+          font-size: 13px;
+          color: #888;
+          text-decoration: none;
+          letter-spacing: 0.04em;
+          transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #1a1a1a; }
+
+        main {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 48px;
+          max-width: 780px;
+          margin: 0 auto;
+          width: 100%;
+        }
+
+        .eyebrow {
+          font-size: 12px;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: #aaa;
+          margin-bottom: 20px;
+        }
+
+        h1 {
+          font-family: 'DM Serif Display', serif;
+          font-size: clamp(48px, 7vw, 80px);
+          font-weight: 400;
+          line-height: 1.05;
+          color: #1a1a1a;
+          margin-bottom: 28px;
+          letter-spacing: -0.01em;
+        }
+
+        h1 em {
+          font-style: italic;
+          color: #888;
+        }
+
+        .bio {
+          font-size: 16px;
+          line-height: 1.75;
+          color: #666;
+          max-width: 480px;
+          margin-bottom: 48px;
+          font-weight: 300;
+        }
+
+        .actions {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .btn-marvel {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: #1a1a1a;
+          color: #fff;
+          border: none;
+          border-radius: 100px;
+          padding: 12px 24px;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.04em;
+          text-decoration: none;
+          transition: background 0.2s, transform 0.15s;
+          cursor: pointer;
+        }
+
+        .btn-marvel:hover {
+          background: #333;
+          transform: translateY(-1px);
+        }
+
+        .btn-marvel .icon {
+          font-size: 15px;
+        }
+
+        .divider {
+          width: 40px;
+          height: 1px;
+          background: #ddd;
+          margin: 48px 0;
+        }
+
+        .meta {
+          font-size: 12px;
+          color: #bbb;
+          letter-spacing: 0.06em;
+        }
+
+        footer {
+          padding: 32px 48px;
+          font-size: 12px;
+          color: #ccc;
+          letter-spacing: 0.06em;
+        }
+
+        @media (max-width: 600px) {
+          nav, main, footer { padding-left: 24px; padding-right: 24px; }
+          h1 { font-size: 42px; }
+        }
+      `}</style>
+
+      <nav>
+        <span className="nav-name">Ryan Okimoto</span>
+        <ul className="nav-links">
+          <li><a href="#">Work</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <p className="eyebrow">Portfolio · 2025</p>
+        <h1>
+          Building things<br />
+          on the <em>internet.</em>
+        </h1>
+        <p className="bio">
+          Developer based in California. Interested in clean interfaces,
+          machine learning, and the Marvel multiverse.
+        </p>
+
+        <div className="actions">
+          <Link href="/marvel_tracker" className="btn-marvel">
+            <span className="icon">🕷️</span>
+            Marvel Watch Tracker
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <div className="divider" />
+        <p className="meta">Available for new projects</p>
       </main>
+
+      <footer>© {new Date().getFullYear()} Ryan Okimoto</footer>
     </div>
   );
 }

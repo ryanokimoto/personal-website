@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { UNIVERSES, MarvelUniverse } from "./marvel-data";
 
-const ADMIN_PASSWORD = "test"; // Change this to your preferred password
+const ADMIN_PASSWORD = "test";
 
 type WatchedMap = Record<string, boolean>;
 
